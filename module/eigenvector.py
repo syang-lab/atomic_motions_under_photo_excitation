@@ -35,9 +35,6 @@ class Eigenvector(SystemStructure):
         self._eigenvector_supercell = np.asarray(self._eigenvector_supercell,dtype= float);
         return self._eigenvector_supercell;
 
-    # def read_sposcar(self,supercell_path):
-    #     self._sposcar = super().read_poscar(supercell_path)
-    #     return self._sposcar;
 
     def eigenvector_supercell_phase(self,wave_vector):
         """
@@ -49,7 +46,6 @@ class Eigenvector(SystemStructure):
             3. calculate the phase exp(i*2*pi*q*r)
             comment: q is wave vector
         """
-        # PATH:/Users/shanyang/Desktop/SeSn-0.025-pnma/infile.ssposcar
         self._wave_vector = wave_vector;
         self._coef=np.empty([self._eigenvector_supercell.shape[0],1],dtype=complex)
         self._eigenvector_supercell_phase=np.empty([self._eigenvector_supercell.shape[0],3],dtype=complex)
